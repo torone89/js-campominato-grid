@@ -7,13 +7,17 @@
 /* GENERIC */
 /* *************************/
 
-.container {
-    background-color: aqua;
-    height: 800px;
-
+body {
+    background-color: gray;
 }
 
-.row {
+header {
+    background-color: white;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+/* .row {
     border: 2px dashed yellow;
 }
 
@@ -24,9 +28,9 @@
 }
 
 .row .row>[class^='col'] {
-    background-color: orange;
+    background-color: orange; */
 
-}
+/* } */
 
 
 
@@ -36,6 +40,24 @@
 /* *************************/
 
 
+
+
+
 /* *************************/
 /* Main */
 /* *************************/
+
+#grid {
+
+    border: solid 1px black;
+    width: 600px;
+    height: 600px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+#grid .cella {
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+    border: 1px solid black;
+}
