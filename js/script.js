@@ -68,6 +68,11 @@ btn.addEventListener('click', () => {
     for (let i = 1; i <= totalecelle; i++) {
 
 
+
+        // Al click sulla cella, stampiamo il numero della cella cliccata in console, poi coloriamo la cella d'azzurro!
+        // # BONUS
+
+
         // Creo cella 
         const cella = creatCell(i)
 
@@ -77,7 +82,18 @@ btn.addEventListener('click', () => {
 
 
         console.log(cella)
+
+
+        cella.addEventListener('click', function (clicca) {
+            this.classList.add('clicked');
+            clicca.target.classList('clicked')
+            console.log(clicca)
+        })
+
+
     }
+
+
 
 })
 
@@ -85,7 +101,6 @@ btn.addEventListener('click', () => {
 
 // #MILESTONE 3
 // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
-
 
 
 
