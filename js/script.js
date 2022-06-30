@@ -12,8 +12,6 @@ console.log("JS")
 // Prepariamo l'HTML ed il CSS per ottenere il risultato grafico che vediamo nell'immagine allegata.
 
 
-// #MILESTONE 3
-// In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 // #MILESTONE 4
 // Al click sulla cella, stampiamo il numero della cella cliccata in console, poi coloriamo la cella d'azzurro!
 // # BONUS
@@ -30,12 +28,18 @@ console.log("JS")
 // Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click
 //  del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
 
-
-
 // Funzioni 
-function creatCell() {
+
+function creatCell(numero) {
     const celle = document.createElement('div');
     celle.className = 'cella';
+
+
+    // #MILESTONE 3
+    // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
+
+
+    celle.innerText = numero
 
     return celle;
 
@@ -65,7 +69,7 @@ btn.addEventListener('click', () => {
 
 
         // Creo cella 
-        const cella = creatCell()
+        const cella = creatCell(i)
 
 
         // Appendo la cella alla griglia
@@ -78,6 +82,9 @@ btn.addEventListener('click', () => {
 })
 
 
+
+// #MILESTONE 3
+// In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 
 
 
