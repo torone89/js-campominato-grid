@@ -24,11 +24,11 @@ console.log("JS")
 
 
 
+
+
 // #MILESTONE 2
 // Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click
 //  del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
-
-
 
 
 
@@ -43,26 +43,41 @@ function creatCell() {
 
 //1 recupero l'elemento dal Dom (griglia)
 
-const griglia = document.getElementsByName('grid')
-console.log("Ho recuperato " + griglia)
+const griglia = document.getElementById('grid')
+console.log("Ho recuperato la" + griglia)
 
 
+// Recupero il bottone
+const btn = document.getElementById('genera');
+console.log("Ho recuperato il " + btn)
+
+// Variabili per crearmi le celle con il ciclo for
 const riga = 10
 const cella = 10
 const totalecelle = riga * cella
 
-for (let i = 1; i <= totalecelle; i++) {
-    {
+
+// Mi creo un addlistner per generarmi le celle grazie alla funzione precendemente creata 
+
+btn.addEventListener('click', () => {
+    for (let i = 1; i <= totalecelle; i++) {
+
 
         // Creo cella 
-        const cellaappese = creatCell()
+        const cella = creatCell()
 
 
         // Appendo la cella alla griglia
-        griglia.appenChild(cellaappese)
+        griglia.appendChild(cella)
 
+
+        console.log(cella)
     }
-}
+
+})
+
+
+
 
 
 
