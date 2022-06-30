@@ -61,6 +61,9 @@ const totalecelle = riga * cella
 // precendemente creata grazie a un bottone 
 
 btn.addEventListener('click', () => {
+
+    griglia.innerHTML = "";
+
     for (let i = 1; i <= totalecelle; i++) {
 
 
