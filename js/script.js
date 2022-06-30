@@ -12,8 +12,7 @@ console.log("JS")
 // Prepariamo l'HTML ed il CSS per ottenere il risultato grafico che vediamo nell'immagine allegata.
 
 
-// #MILESTONE 4
-// Al click sulla cella, stampiamo il numero della cella cliccata in console, poi coloriamo la cella d'azzurro!
+
 // # BONUS
 // Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 // - con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
@@ -28,19 +27,16 @@ console.log("JS")
 // Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click
 //  del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
 
-// Funzioni 
+// Funzione
 
 function creatCell(numero) {
     const celle = document.createElement('div');
     celle.className = 'cella';
 
-
     // #MILESTONE 3
     // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 
-
     celle.innerText = numero
-
     return celle;
 
 }
@@ -68,11 +64,6 @@ btn.addEventListener('click', () => {
     for (let i = 1; i <= totalecelle; i++) {
 
 
-
-        // Al click sulla cella, stampiamo il numero della cella cliccata in console, poi coloriamo la cella d'azzurro!
-        // # BONUS
-
-
         // Creo cella 
         const cella = creatCell(i)
 
@@ -80,27 +71,26 @@ btn.addEventListener('click', () => {
         // Appendo la cella alla griglia
         griglia.appendChild(cella)
 
-
         console.log(cella)
 
+        // #MILESTONE 4
+        // Al click sulla cella, stampiamo il numero della cella cliccata i
+        // n console, poi coloriamo la cella d'azzurro!
 
         cella.addEventListener('click', function (clicca) {
-            this.classList.add('clicked');
-            clicca.target.classList('clicked')
-            console.log(clicca)
+
+            cella.classList.add('clicked');
+
+            console.log(cella)
         })
 
-
     }
-
-
 
 })
 
 
 
-// #MILESTONE 3
-// In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
+
 
 
 
