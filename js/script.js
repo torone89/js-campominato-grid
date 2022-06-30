@@ -35,7 +35,7 @@ console.log("JS")
 // Funzioni 
 function creatCell() {
     const celle = document.createElement('div');
-    cella.className = 'cella';
+    celle.className = 'cella';
 
     return celle;
 
@@ -57,7 +57,8 @@ const cella = 10
 const totalecelle = riga * cella
 
 
-// Mi creo un addlistner per generarmi le celle grazie alla funzione precendemente creata 
+// Mi creo un addlistner per generarmi le celle grazie alla funzione 
+// precendemente creata grazie a un bottone 
 
 btn.addEventListener('click', () => {
     for (let i = 1; i <= totalecelle; i++) {

@@ -57,7 +57,7 @@ header {
 }
 
 #grid .cella {
-    height: calc(100% / 10);
-    width: calc(100% / 10);
+    height: 10%;
+    width: 10%;
     border: 1px solid black;
 }
