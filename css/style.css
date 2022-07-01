@@ -13,34 +13,9 @@ body {
 
 header {
     background-color: white;
-    height: 100px;
+    height: 120px;
     margin-bottom: 40px;
 }
-
-/* .row {
-    border: 2px dashed yellow;
-}
-
-.row>[class^='col'] {
-    min-height: 100px;
-    background-color: blanchedalmond;
-    border: 1px gray solid;
-}
-
-.row .row>[class^='col'] {
-    background-color: orange; */
-
-/* } */
-
-
-
-
-/* *************************/
-/* Header
-/* *************************/
-
-
-
 
 
 /* *************************/
