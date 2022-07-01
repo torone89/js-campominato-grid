@@ -27,58 +27,13 @@ console.log("JS")
 // Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click
 //  del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
 
-// Funzione
 
-function creatCell(numero) {
-    const celle = document.createElement('div');
-    celle.className = 'cella';
 
-    // #MILESTONE 3
-    // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
-
-    celle.innerText = numero
-    return celle;
-
-}
-
-//1 recupero l'elemento dal Dom (griglia)
-
-const griglia = document.getElementById('grid')
-console.log("Ho recuperato la" + griglia)
 
 
 // Recupero il bottone
 const btn = document.getElementById('genera');
 console.log("Ho recuperato il " + btn)
-
-// BONUS
-// Mi recupero il livello 
-let selezione = document.getElementById('livello').value
-
-console.log(selezione)
-
-// Variabili per crearmi le celle con il ciclo for
-let riga;
-let cella;
-
-
-switch (selezione) {
-    case 'easy': riga = 10
-        cella
-        // code block
-        break;
-    case 'medium': riga = 9
-        cella = 9
-        // code block
-        break;
-    case 'hard': riga = 7
-        cella = 7
-        break
-    // code block
-}
-
-
-const totalecelle = riga * cella
 
 
 // Mi creo un addlistner per generarmi le celle grazie alla funzione 
@@ -86,7 +41,57 @@ const totalecelle = riga * cella
 
 btn.addEventListener('click', () => {
 
+    btn.innerHTML = "Ricomincia";
+    //1 recupero l'elemento dal Dom (griglia)
+
+    const griglia = document.getElementById('grid')
+    console.log("Ho recuperato la" + griglia)
+
     griglia.innerHTML = "";
+
+
+    // BONUS
+    // Mi recupero il livello 
+    let selezione = document.getElementById('livello').value
+
+    console.log(selezione)
+
+    // Variabili per crearmi le celle con il ciclo for
+    let riga;
+    let cella;
+
+    switch (selezione) {
+        case 'easy': riga = 10
+            cella = 10
+            // code block
+            break;
+        case 'medium': riga = 9
+            cella = 9
+            // code block
+            break;
+        case 'hard': riga = 7
+            cella = 7
+            break
+        // code block
+    }
+
+    const totalecelle = riga * cella
+
+    // FUNZIONE
+
+    function creatCell(numero) {
+        const celle = document.createElement('div');
+        celle.className = 'cella';
+
+        // #MILESTONE 3
+        // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
+
+        celle.innerText = numero
+        return celle;
+
+    }
+
+
 
     for (let i = 1; i <= totalecelle; i++) {
 
@@ -106,13 +111,15 @@ btn.addEventListener('click', () => {
 
         cella.addEventListener('click', function (clicca) {
 
+            cella.classList.add('clicked');
+
 
             // Se è già cliccato non procede
             if (cella.classList.contains('clicked')) {
                 return
             }
 
-            cella.classList.add('clicked');
+
 
             console.log(cella)
         })
