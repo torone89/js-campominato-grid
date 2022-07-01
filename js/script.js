@@ -51,9 +51,33 @@ console.log("Ho recuperato la" + griglia)
 const btn = document.getElementById('genera');
 console.log("Ho recuperato il " + btn)
 
+// BONUS
+// Mi recupero il livello 
+let selezione = document.getElementById('livello').value
+
+console.log(selezione)
+
 // Variabili per crearmi le celle con il ciclo for
-const riga = 10
-const cella = 10
+let riga;
+let cella;
+
+
+switch (selezione) {
+    case 'easy': riga = 10
+        cella
+        // code block
+        break;
+    case 'medium': riga = 9
+        cella = 9
+        // code block
+        break;
+    case 'hard': riga = 7
+        cella = 7
+        break
+    // code block
+}
+
+
 const totalecelle = riga * cella
 
 
@@ -81,6 +105,12 @@ btn.addEventListener('click', () => {
         // n console, poi coloriamo la cella d'azzurro!
 
         cella.addEventListener('click', function (clicca) {
+
+
+            // Se è già cliccato non procede
+            if (cella.classList.contains('clicked')) {
+                return
+            }
 
             cella.classList.add('clicked');
 
