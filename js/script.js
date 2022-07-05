@@ -12,7 +12,6 @@ console.log("JS")
 // Prepariamo l'HTML ed il CSS per ottenere il risultato grafico che vediamo nell'immagine allegata.
 
 
-
 // # BONUS
 // Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 // - con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
@@ -20,15 +19,9 @@ console.log("JS")
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
 
-
-
-
 // #MILESTONE 2
 // Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click
 //  del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
-
-
-
 
 
 // Recupero il bottone
@@ -58,28 +51,29 @@ btn.addEventListener('click', () => {
 
     // Variabili per crearmi le celle con il ciclo for
     let riga;
-    let cella;
+    let cell;
 
     switch (selezione) {
         case 'easy': riga = 10
-            cella = 10
+            cell = 10
             // code block
             break;
         case 'medium': riga = 9
-            cella = 9
+            cell = 9
             // code block
             break;
         case 'hard': riga = 7
-            cella = 7
+            cell = 7
             break
         // code block
     }
 
-    const totalecelle = riga * cella
+    const totalecelle = riga * cell
+
 
     // FUNZIONE
 
-    function creatCell(numero) {
+    function creatCell(numero, cellaPerRiga) {
         const celle = document.createElement('div');
         celle.className = 'cella';
 
@@ -87,18 +81,16 @@ btn.addEventListener('click', () => {
         // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 
         celle.innerText = numero
+        // Calcolare le misure delle celle
+        const side = `calc(100% / ${cellaPerRiga})`
+        celle.style.height = side;
+        celle.style.width = side;
         return celle;
-
     }
 
-
-
     for (let i = 1; i <= totalecelle; i++) {
-
-
         // Creo cella 
-        const cella = creatCell(i)
-
+        const cella = creatCell(i, cell)
 
         // Appendo la cella alla griglia
         griglia.appendChild(cella)
@@ -109,23 +101,17 @@ btn.addEventListener('click', () => {
         // Al click sulla cella, stampiamo il numero della cella cliccata i
         // n console, poi coloriamo la cella d'azzurro!
 
-        cella.addEventListener('click', function (clicca) {
+        cella.addEventListener('click', function () {
 
             cella.classList.add('clicked');
-
 
             // Se è già cliccato non procede
             if (cella.classList.contains('clicked')) {
                 return
             }
-
-
-
             console.log(cella)
         })
-
     }
-
 })
 
 

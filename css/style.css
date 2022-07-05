@@ -32,8 +32,6 @@ header {
 }
 
 #grid .cella {
-    height: 10%;
-    width: 10%;
     cursor: pointer;
     border: 1px solid black;
     display: flex;
